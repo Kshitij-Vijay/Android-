@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_tint"
+    android:contentDescription="@string/null_def">
+
+    <LinearLayout
+        android:id="@+id/url_final_containerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/p_padding5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/url_final_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/p_textView_height"
+            android:layout_marginTop="@dimen/p_padding5"
+            android:layout_marginEnd="@dimen/p_padding5"
+            android:fontFamily="@font/alata"
+            android:hint="Name"
+            android:padding="@dimen/p_padding2"
+            android:textColor="@color/txt1"
+            android:textColorHint="@color/txt1"
+            android:textSize="@dimen/text3" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/url_final_desc_input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/p_textView_height"
+            android:layout_marginTop="@dimen/p_padding5"
+            android:layout_marginEnd="@dimen/p_padding5"
+            android:fontFamily="@font/alata"
+            android:hint="Description"
+            android:padding="@dimen/p_padding2"
+            android:textColor="@color/txt1"
+            android:textColorHint="@color/txt1"
+            android:textSize="@dimen/text3" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/url_final_groups_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="@dimen/p_padding5"
+            android:layout_marginBottom="@dimen/p_padding3"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/url_final_groups_textView"
+                android:layout_width="124dp"
+                android:layout_height="56dp"
+                android:layout_margin="@dimen/p_padding2"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/alata"
+                android:padding="@dimen/p_padding4"
+                android:text="Groups : "
+                android:textColor="@color/txt1"
+                android:textSize="@dimen/text4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/url_final_addGroupbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/alata"
+                android:text="New Group"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/url_final_groups_recyclerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/url_final_addGroupbtn" />
+
+            <!--            <ListView-->
+            <!--                android:id="@+id/ListviewData"-->
+            <!--                android:layout_width="378dp"-->
+            <!--                android:layout_height="202dp"-->
+            <!--                android:layout_marginTop="80dp"-->
+            <!--                android:layout_marginBottom="10dp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintHorizontal_bias="0.37"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/url_final_addGroupbtn"-->
+            <!--                app:layout_constraintVertical_bias="0.833" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/url_final_refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_marginTop="@dimen/p_padding3"
+            android:layout_marginBottom="@dimen/p_padding3"
+            android:background="@drawable/shapes"
+            android:padding="@dimen/p_padding2">
+
+            <TextView
+                android:id="@+id/url_final_refresh_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/p_padding2"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/alata"
+                android:padding="@dimen/p_padding4"
+                android:text="Refresh : "
+                android:textColor="@color/txt1"
+                android:textSize="@dimen/text4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/url_final_refresh_custom_frequencyInput"
+                android:layout_width="147dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/alata"
+                android:hint="hrs"
+                android:inputType="number|numberSigned"
+                android:minHeight="48dp"
+                android:textColor="@color/txt1"
+                android:textColorHint="@color/txt1"
+                android:textSize="@dimen/text2"
+                app:layout_constraintBottom_toBottomOf="@+id/ulr_final_refresh_custom_freq_textView"
+                app:layout_constraintStart_toEndOf="@+id/ulr_final_refresh_custom_freq_textView"
+                app:layout_constraintTop_toTopOf="@+id/ulr_final_refresh_custom_freq_textView" />
+
+            <TextView
+                android:id="@+id/ulr_final_refresh_custom_freq_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/alata"
+                android:text="Frequency : "
+                android:textColor="@color/txt2"
+                android:textSize="@dimen/text4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/url_final_refresh_textView" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="229dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/alata"
+                android:lines="2"
+                android:padding="@dimen/p_padding1"
+                android:text="[How often the price must be updated]"
+                android:textColor="@color/txt1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.272"
+                app:layout_constraintStart_toEndOf="@+id/url_final_refresh_textView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/url_final_notifications_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/p_padding3"
+            android:layout_marginRight="@dimen/p_padding3"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shapes"
+            android:padding="@dimen/p_padding3"
+            android:paddingBottom="@dimen/p_padding4">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/url_final_notif_dec"
+                underlineColorAndroid="transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/alata"
+                android:hint="dec"
+                android:inputType="number|numberDecimal"
+                android:minWidth="48dp"
+                android:padding="@dimen/p_padding3"
+                android:textColor="@color/red"
+                android:textColorHint="@color/red"
+                android:textSize="@dimen/text3"
+                app:layout_constraintBottom_toBottomOf="@+id/url_final_notifs_decrease_textView"
+                app:layout_constraintStart_toEndOf="@+id/url_final_notifs_decrease_textView"
+                app:layout_constraintTop_toTopOf="@+id/url_final_notifs_decrease_textView" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/url_final_notif_inc"
+                underlineColorAndroid="transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/alata"
+                android:hint="inc"
+                android:inputType="number|numberDecimal"
+                android:minWidth="48dp"
+                android:padding="@dimen/p_padding3"
+                android:textColor="@color/green"
+                android:textColorHint="@color/green"
+                android:textSize="@dimen/text3"
+                app:layout_constraintBottom_toBottomOf="@+id/url_final_notifs_increase_TextView"
+                app:layout_constraintStart_toEndOf="@+id/url_final_notifs_increase_TextView"
+                app:layout_constraintTop_toTopOf="@+id/url_final_notifs_increase_TextView" />
+
+            <TextView
+                android:id="@+id/url_final_notifs_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/alata"
+                android:padding="@dimen/p_padding3"
+                android:text="Notifications : "
+                android:textColor="@color/txt1"
+                android:textSize="@dimen/text5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/url_final_notifs_increase_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/alata"
+                android:padding="@dimen/p_padding3"
+                android:text="Increase in Price : "
+                android:textColor="@color/txt2"
+                android:textSize="@dimen/text3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/url_final_notifs_textView" />
+
+            <TextView
+                android:id="@+id/url_final_notifs_decrease_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/alata"
+                android:padding="@dimen/p_padding3"
+                android:text="Decrease in Price :"
+                android:textColor="@color/txt2"
+                android:textSize="@dimen/text3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/url_final_notifs_increase_TextView" />
+
+            <Switch
+                android:id="@+id/url_final_notifSwitch"
+                android:layout_width="69dp"
+                android:layout_height="48dp"
+                app:layout_constraintBottom_toBottomOf="@+id/url_final_notifs_textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.524"
+                app:layout_constraintStart_toEndOf="@+id/url_final_notifs_textView"
+                app:layout_constraintTop_toTopOf="@+id/url_final_notifs_textView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:id="@+id/url_final_discard_constraintLayout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/p_padding3"-->
+        <!--            android:layout_marginEnd="@dimen/p_padding5"-->
+        <!--            android:layout_marginBottom="@dimen/p_padding3"-->
+        <!--            android:padding="@dimen/p_padding3">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/url_final_discard_TextView"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_margin="@dimen/p_padding2"-->
+        <!--                android:layout_marginStart="16dp"-->
+        <!--                android:layout_marginTop="12dp"-->
+        <!--                android:text="Discard : "-->
+        <!--                android:textSize="@dimen/text4"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--            <RadioGroup-->
+        <!--                android:id="@+id/url_final_discard_radioGroup"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_margin="@dimen/p_padding2"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/url_final_discard_TextView">-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/url_final_discard_1"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_margin="@dimen/p_padding1"-->
+        <!--                    android:text="Never"-->
+        <!--                    android:textSize="@dimen/text2" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/url_final_discard_2"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_margin="@dimen/p_padding1"-->
+        <!--                    android:text="1 Month"-->
+        <!--                    android:textSize="@dimen/text2" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/url_final_discard_3"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_margin="@dimen/p_padding1"-->
+        <!--                    android:text="3 Months"-->
+        <!--                    android:textSize="@dimen/text2" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/url_final_discard_4"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_margin="@dimen/p_padding1"-->
+        <!--                    android:text="6 Months"-->
+        <!--                    android:textSize="@dimen/text2" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/url_final_discard_5"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_margin="@dimen/p_padding1"-->
+        <!--                    android:text="One Year"-->
+        <!--                    android:textSize="@dimen/text2" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/url_final_discard_6"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_margin="@dimen/p_padding1"-->
+        <!--                    android:text="Two Years"-->
+        <!--                    android:textSize="@dimen/text2" />-->
+        <!--            </RadioGroup>-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <Button
+            android:id="@+id/url_final_save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/p_padding3"
+            android:fontFamily="@font/alata"
+            android:padding="@dimen/p_padding5"
+            android:text="SAVE"
+            app:layout_constraintBottom_toTopOf="@+id/url_save_cancel_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/url_final_cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/p_padding3"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/alata"
+            android:padding="@dimen/p_padding5"
+            android:text="CANCEL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+</ScrollView>
